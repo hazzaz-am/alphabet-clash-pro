@@ -115,6 +115,7 @@
 								fill="white"
 							/>
 						</svg>
+						<span id="current-life">5</span>
 					</button>
 					<button
 						class="font-inter bg-[#360490] text-xl font-medium text-white flex items-center gap-2 py-4 px-9 rounded-full"
@@ -132,19 +133,20 @@
 								fill="white"
 							/>
 						</svg>
+						<span id="current-score">0</span>
 					</button>
 				</div>
 			</div>
 			</section>
 
 			<!-- Score -->
-			<section class="score flex items-center justify-center min-h-screen hidden">
+			<section id="game-over" class="score flex items-center justify-center min-h-screen hidden">
 				<div class="text-white text-center space-y-4 bg-[#824ad3] p-6 rounded-xl">
 					<h1 class="text-[64px]">
 						<span class="font-extrabold">Score:</span>
-						<span>14</span>
+						<span id="total-score"></span>
 					</h1>
-					<button class="bg-white text-[#010313] px-8 py-5 rounded-md font-semibold text-2xl hover:bg-[#ffffffbf] transition-all">Play Again</button>
+					<button id="play-again" class="bg-white text-[#010313] px-8 py-5 rounded-md font-semibold text-2xl hover:bg-[#ffffffbf] transition-all">Play Again</button>
 					<p>Practice will make you Pro</p>
 				</div>
 			</section>

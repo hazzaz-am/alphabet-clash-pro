@@ -1,3 +1,4 @@
+// hide element by id
 function hideElementById (elementId) {
   const element = document.getElementById(elementId)
   element.classList.add('hidden')
@@ -31,4 +32,18 @@ function generateARandomAlphabet () {
   
   const alphabet = alphabets[index]
   return alphabet
+}
+
+// get element value by id
+function gettElementValueById (elementId) {
+  const element = document.getElementById(elementId)
+  const stringValue = element.innerText;
+  const numburValue = parseInt(stringValue)
+  return numburValue
+}
+
+// set element value by id
+function setElementValueById (elementId, value) {
+  const element = document.getElementById(elementId);
+  element.innerText = value
 }
