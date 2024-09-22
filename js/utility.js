@@ -34,6 +34,12 @@ function generateARandomAlphabet () {
   return alphabet
 }
 
+// get a element text by id
+function getElementTextById (elementId) {
+  const element = document.getElementById(elementId)
+  return element.innerText
+}
+
 // get element value by id
 function gettElementValueById (elementId) {
   const element = document.getElementById(elementId)
