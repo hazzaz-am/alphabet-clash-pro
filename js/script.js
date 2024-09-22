@@ -1,15 +1,14 @@
 // continue game
 function continueGame() {
-		const alphabet = generateARandomAlphabet();
-		// generate random alphabet to show on board
+	const alphabet = generateARandomAlphabet();
+	// generate random alphabet to show on board
 
-			// set alphabet to current alphabet
+	// set alphabet to current alphabet
 	const curretnAlphabetElement = document.getElementById("current-alphabet");
 	curretnAlphabetElement.innerText = alphabet;
 
 	// set key background color by it's id
 	setBackgroundColorById(alphabet);
-
 }
 
 // detect the key press
@@ -19,7 +18,7 @@ function handleKeyboardPress(event) {
 
 	// if press escape quite the game
 	if (pressedKey === "Escape") {
-		escapeGame ()
+		escapeGame();
 	}
 
 	// make current alphabet lowercase to compare to pressed key
@@ -28,6 +27,10 @@ function handleKeyboardPress(event) {
 
 	// checking if user is pressing the right key or not
 	if (pressedKey === expectedAlphabet) {
+		// play sound when pres right key
+		const rightKey = document.getElementById("rightKey");
+		rightKey.currentTime = 0;
+		rightKey.play();
 		// increase score for right press
 		const currentScore = gettElementValueById("current-score");
 		const newScore = currentScore + 1;
@@ -37,6 +40,10 @@ function handleKeyboardPress(event) {
 		removeBackgroundColorById(expectedAlphabet);
 		continueGame();
 	} else {
+		// play error sound when clicking wrong key
+		const errorKey = document.getElementById("errorKey");
+		errorKey.currentTime = 0;
+		errorKey.play();
 		// decrease the life if key press is not right as expected
 		const currentLife = gettElementValueById("current-life");
 		const newLife = currentLife - 1;
@@ -56,6 +63,7 @@ function play() {
 	setElementValueById("current-life", 5);
 	setElementValueById("current-score", 0);
 	continueGame();
+
 	document.addEventListener("keyup", handleKeyboardPress);
 }
 
@@ -84,9 +92,8 @@ function playAgain() {
 	setElementValueById("current-score", 0);
 }
 
-
-// escape the game 
-function escapeGame () {
+// escape the game
+function escapeGame() {
 	hideElementById("play-ground");
 	showElementById("home-screen");
 
